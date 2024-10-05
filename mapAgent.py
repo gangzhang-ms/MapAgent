@@ -28,6 +28,10 @@ class map_agent:
                         plan.path.append(str(schedule))
                         plan.arrival_time = schedule.arrival_time
                         plans.append(plan)
+        return plans
+    
+    def navigate(self, message: str) -> str:
+        plans = self.accept(message)
         return recommand(plans)
 
 def call_map_api(model: travel_model) -> list[plan]:
