@@ -1,0 +1,2 @@
+COMPANY_LOCATION = "紫星路999号"
+
