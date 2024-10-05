@@ -28,8 +28,7 @@ class map_agent:
                         plan.path.append(str(schedule))
                         plan.arrival_time = schedule.arrival_time
                         plans.append(plan)
-        return plans
-
+        return recommand(plans)
 
 def call_map_api(model: travel_model) -> list[plan]:
     # call gaode map api
@@ -40,7 +39,3 @@ def call_map_api(model: travel_model) -> list[plan]:
             plans.append(plan(path, duration_minutes, model.time, arrive_time, cost))
     return plans
 
-agent = map_agent()
-plans = agent.accept(f'早上9点05分，从西藏南路地铁站出发，到紫星路999号')
-choice = recommand(plans)
-print(choice)
